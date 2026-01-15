@@ -7,6 +7,21 @@ interface CheckoutProps {
     onNavigate: (view: any) => void;
 }
 
+// Mapping for Square Images in Cart (Same as CartPage)
+const cartImageMap: Record<string, string> = {
+    '1': '/zizi-square/eloise.png',
+    '2': '/zizi-square/vittoria.png',
+    '3': '/zizi-square/aurele.png',
+    '4': '/zizi-square/benoit.png',
+    '5': '/zizi-square/henrietta.png',
+    '6': '/zizi-square/william.png',
+    '7': '/zizi-square/reginald.png',
+};
+
+const getCartImage = (id: string, fallback: string) => {
+    return cartImageMap[id] || fallback;
+};
+
 const CheckoutPage: React.FC<CheckoutProps> = ({ onNavigate }) => {
     const { items, subtotal } = useCart();
     const [isProcessing, setIsProcessing] = useState(false);
@@ -34,8 +49,12 @@ const CheckoutPage: React.FC<CheckoutProps> = ({ onNavigate }) => {
                             <div className="space-y-8">
                                 {items.map((item) => (
                                     <div key={item.id} className="flex gap-6">
-                                        <div className="w-20 aspect-[4/5] overflow-hidden shrink-0">
-                                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                        <div className="w-20 aspect-[4/5] overflow-hidden shrink-0 bg-white/50 rounded-sm">
+                                            <img
+                                                src={getCartImage(item.id, item.image)}
+                                                alt={item.name}
+                                                className="w-full h-full object-contain p-2"
+                                            />
                                         </div>
                                         <div className="flex flex-col justify-between py-1">
                                             <div>
