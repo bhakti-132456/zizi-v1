@@ -94,9 +94,9 @@ const InstagramArchive: React.FC = () => {
     }, []);
 
     return (
-        <section className="h-full w-full bg-[#f4f4f4] relative flex flex-col justify-center items-center py-12 md:py-0 px-6 md:px-12 overflow-hidden">
-            <div className="max-w-[1600px] w-full mx-auto flex flex-col h-full md:h-auto justify-center">
-                <div className="flex flex-col items-center text-center mb-10 md:mb-16 shrink-0 pt-20 md:pt-0">
+        <section className="w-full bg-[#f4f4f4] relative flex flex-col justify-center items-center py-16 md:py-24 px-4 md:px-12 overflow-hidden min-h-screen md:h-full">
+            <div className="max-w-[1600px] w-full mx-auto flex flex-col justify-center">
+                <div className="flex flex-col items-center text-center mb-8 md:mb-16 shrink-0">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-4">
                         From the Archive
                     </h2>

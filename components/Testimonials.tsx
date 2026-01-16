@@ -26,17 +26,17 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="h-full w-full bg-cream relative overflow-hidden flex flex-col">
-      <div className="flex-1 w-full max-w-7xl mx-auto px-6 pt-20 md:pt-24 pb-8 flex flex-col min-h-0">
+    <section className="w-full bg-cream relative overflow-hidden flex flex-col min-h-screen md:h-full">
+      <div className="w-full max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col">
         <h2 className="text-sm font-sans font-bold tracking-[0.3em] uppercase text-gray-400 text-center mb-8 md:mb-12 flex-shrink-0">
           Collector Notes
         </h2>
 
-        <div className="flex-1 flex md:grid md:grid-cols-3 gap-8 md:gap-12 items-center overflow-x-auto md:overflow-visible scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 min-h-0 snap-x snap-mandatory">
+        <div className="flex md:grid md:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory">
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[80vw] md:w-auto flex flex-col h-full justify-center group snap-center"
+              className="flex-shrink-0 w-[80vw] md:w-auto flex flex-col group snap-center"
             >
               {/* Supporting image - increased height and centered crop */}
               <div className="mb-6 overflow-hidden rounded-sm flex-shrink-0 aspect-video md:aspect-auto">
@@ -52,7 +52,7 @@ const Testimonials: React.FC = () => {
                   {item.quote}
                 </p>
               </div>
-              <div className="border-t border-gray-200 pt-4 mt-auto flex-shrink-0">
+              <div className="border-t border-gray-200 pt-4 mt-4 md:mt-auto flex-shrink-0">
                 <span className="text-xs font-bold tracking-[0.15em] uppercase text-gray-500">
                   {item.author}
                 </span>

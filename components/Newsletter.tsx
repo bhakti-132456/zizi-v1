@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Newsletter: React.FC = () => {
   return (
-    <section className="h-full w-full flex items-center justify-center bg-black text-white px-6 pt-20 md:pt-24">
+    <section className="w-full min-h-screen md:h-full flex items-center justify-center bg-black text-white px-4 md:px-6 py-16 md:py-24">
       <div className="max-w-2xl w-full text-center">
         <h2 className="text-5xl md:text-7xl font-serif mb-8">Inner Circle</h2>
         <p className="text-white/50 mb-12 font-light text-lg">

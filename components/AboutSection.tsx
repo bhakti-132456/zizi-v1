@@ -4,12 +4,12 @@ const AboutSection: React.FC = () => {
   const aboutImage = "/about-philosophy.jpg";
 
   return (
-    <section className="h-full w-full bg-[#f4f4f4] relative overflow-hidden flex flex-col">
-      <div className="flex-1 w-full max-w-[1400px] mx-auto px-6 md:px-12 pt-20 md:pt-24 pb-8 flex flex-col justify-center min-h-0">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24 h-full md:h-auto min-h-0">
+    <section className="w-full bg-[#f4f4f4] relative overflow-hidden flex flex-col min-h-screen md:h-full">
+      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-12 py-16 md:py-24 flex flex-col justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-24">
 
           {/* Image Side */}
-          <div className="w-full md:w-1/2 relative aspect-square md:aspect-[4/5] max-h-[50vh] md:max-h-[70vh] overflow-hidden group flex-shrink-0">
+          <div className="w-full md:w-1/2 relative aspect-square md:aspect-[4/5] max-h-[40vh] md:max-h-[70vh] overflow-hidden group flex-shrink-0">
             <img
               src={aboutImage}
               alt="Our Philosophy"

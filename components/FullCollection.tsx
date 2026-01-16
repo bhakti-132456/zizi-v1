@@ -173,7 +173,7 @@ const ProductSection = ({ product, config, description, isRightAligned, onNaviga
   return (
     <section
       ref={sectionRef}
-      className={`relative min-h-screen w-full flex flex-col justify-center md:flex-row md:justify-start ${isRightAligned ? 'md:flex-row-reverse' : ''}`}
+      className={`relative min-h-[80vh] md:min-h-screen w-full flex flex-col justify-center md:flex-row md:justify-start ${isRightAligned ? 'md:flex-row-reverse' : ''}`}
     >
       {/* Background Text - Spanning entire section */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none z-0">
@@ -183,7 +183,7 @@ const ProductSection = ({ product, config, description, isRightAligned, onNaviga
       </div>
 
       {/* Image Half */}
-      <div className="w-full h-[30vh] md:w-1/2 md:h-screen relative z-10 flex items-center justify-center p-8 md:p-12">
+      <div className="w-full h-[40vh] md:w-1/2 md:h-screen relative z-10 flex items-center justify-center p-4 md:p-12">
         <motion.div
           className="relative w-full h-full flex items-center justify-center"
           whileHover={{ scale: 1.02 }}
@@ -198,7 +198,7 @@ const ProductSection = ({ product, config, description, isRightAligned, onNaviga
       </div>
 
       {/* Info Half */}
-      <div className="w-full h-[30vh] md:w-1/2 md:h-screen flex flex-col items-center justify-center p-8 md:p-16 text-center relative z-10">
+      <div className="w-full md:w-1/2 md:h-screen flex flex-col items-center justify-center p-6 md:p-16 text-center relative z-10">
         <div className={`max-w-md mx-auto ${config.theme === 'dark' ? 'text-white' : 'text-black'}`}>
           <span className={`inline-block text-[10px] font-bold tracking-[0.3em] uppercase mb-4 ${config.theme === 'dark' ? 'text-white/60' : 'text-black/40'}`}>
             {product.subtitle.split('—')[0]}

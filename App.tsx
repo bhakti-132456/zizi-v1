@@ -194,54 +194,54 @@ export default function App() {
                 </CardScrollSection>
 
                 {/* Featured Collection - Cards animate from left */}
-                <CardScrollSection index={1} className="min-h-[100dvh] bg-white">
+                <CardScrollSection index={1} className="min-h-screen md:min-h-[100dvh] bg-white">
                   <ParallaxReveal direction="left" offset={80}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Featured" data-theme="light">
+                    <div className="min-h-screen md:h-[100dvh] w-full overflow-hidden" data-section-name="Featured" data-theme="light">
                       <FeaturedCollection onNavigateProduct={navigateToProduct} />
                     </div>
                   </ParallaxReveal>
                 </CardScrollSection>
 
                 {/* About Section - Content animates from right */}
-                <CardScrollSection index={2} className="min-h-[100dvh] bg-[#f4f4f4]">
+                <CardScrollSection index={2} className="bg-[#f4f4f4]">
                   <ParallaxReveal direction="right" offset={80}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Our Philosophy" data-theme="light">
+                    <div className="w-full overflow-hidden" data-section-name="Our Philosophy" data-theme="light">
                       <AboutSection />
                     </div>
                   </ParallaxReveal>
                 </CardScrollSection>
 
                 {/* Testimonials - Animate from left */}
-                <CardScrollSection index={3} className="min-h-[100dvh] bg-[#fbfaf8]">
+                <CardScrollSection index={3} className="bg-[#fbfaf8]">
                   <ParallaxReveal direction="left" offset={60}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Voices" data-theme="light">
+                    <div className="w-full overflow-hidden" data-section-name="Voices" data-theme="light">
                       <Testimonials />
                     </div>
                   </ParallaxReveal>
                 </CardScrollSection>
 
                 {/* Instagram Archive - Animate from right */}
-                <CardScrollSection index={4} className="min-h-[100dvh] bg-[#f4f4f4]">
+                <CardScrollSection index={4} className="bg-[#f4f4f4]">
                   <ParallaxReveal direction="right" offset={60}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Archive" data-theme="light">
+                    <div className="w-full overflow-hidden" data-section-name="Archive" data-theme="light">
                       <InstagramArchive />
                     </div>
                   </ParallaxReveal>
                 </CardScrollSection>
 
                 {/* Newsletter - Animate from left */}
-                <CardScrollSection index={5} className="min-h-[100dvh] bg-black">
+                <CardScrollSection index={5} className="bg-black">
                   <ParallaxReveal direction="left" offset={60}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Join Us" data-theme="dark">
+                    <div className="w-full overflow-hidden" data-section-name="Join Us" data-theme="dark">
                       <Newsletter />
                     </div>
                   </ParallaxReveal>
                 </CardScrollSection>
 
                 {/* Footer - Animate up */}
-                <CardScrollSection index={6} className="min-h-[100dvh] bg-[#050505]">
+                <CardScrollSection index={6} className="bg-[#050505]">
                   <ParallaxReveal direction="up" offset={40}>
-                    <div className="h-[100dvh] w-full overflow-hidden" data-section-name="Connect" data-theme="dark">
+                    <div className="w-full overflow-hidden py-16 md:py-24" data-section-name="Connect" data-theme="dark">
                       <Footer />
                     </div>
                   </ParallaxReveal>
