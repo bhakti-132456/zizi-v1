@@ -12,15 +12,15 @@ const Hero: React.FC<HeroProps> = ({ onNavigateProduct }) => {
   };
 
   return (
-    <section className="relative w-full h-[100dvh] bg-black overflow-hidden">
+    <section className="relative w-screen max-w-full h-[100dvh] bg-black overflow-hidden">
       {/* Background Image - Immersive Experience */}
-      <div className="absolute inset-0 z-0">
-        <picture>
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <picture className="block w-full h-full">
           <source srcSet="/images/home/hero-mobile.jpg" media="(max-width: 768px)" />
           <img
             src="/zizi-webp/dior-eloise-hero.webp"
             alt="Dior – Éloise"
-            className="w-full h-full object-cover object-bottom md:object-center scale-105 animate-slow-zoom blur-[1px]"
+            className="w-full h-full object-cover object-bottom md:object-center scale-[1.02] animate-slow-zoom"
           />
         </picture>
 

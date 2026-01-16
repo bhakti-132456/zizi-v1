@@ -52,7 +52,7 @@ const CardScrollSection: React.FC<CardScrollSectionProps> = ({
     return (
         <motion.section
             ref={ref}
-            className={`relative w-full ${className}`}
+            className={`relative w-full max-w-full overflow-hidden ${className}`}
             style={{ scale, opacity }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

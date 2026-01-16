@@ -45,7 +45,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({ onNavigateProdu
   };
 
   return (
-    <section className="h-full w-full bg-[#f4f4f4] relative overflow-hidden flex flex-col justify-center">
+    <section className="h-full w-full max-w-full bg-[#f4f4f4] relative overflow-hidden flex flex-col justify-center">
 
       {/* Texture / Grain Overlay would go here */}
 

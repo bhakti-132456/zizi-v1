@@ -163,7 +163,7 @@ export default function App() {
     <AuthProvider>
       <CartProvider>
         <SmoothScroll>
-          <div className="grain relative bg-white font-sans selection:bg-[#D4AF37] selection:text-white min-h-screen">
+          <div className="grain relative bg-white font-sans selection:bg-[#D4AF37] selection:text-white min-h-screen overflow-x-hidden w-full max-w-full">
             <Navbar theme={theme} onNavigate={navigateTo} currentView={currentView} isLogoDocked={isDocked} />
 
             {/* --- DYNAMIC MONOLITHIC LOGO --- */}
