@@ -60,7 +60,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({ onNavigateProdu
         <div className="flex justify-between items-end mb-8 md:mb-16 border-b border-black/5 pb-6">
           <div className="flex flex-col">
             <span className="text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-2">Curated Selection</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-black">Featured</h2>
+            <h2 className="text-3xl md:text-5xl font-serif text-black">Featured</h2>
           </div>
           <button className="hidden md:flex items-center gap-2 group cursor-pointer">
             <span className="text-xs font-bold tracking-[0.2em] uppercase group-hover:opacity-50 transition-opacity">View Index</span>
@@ -68,7 +68,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({ onNavigateProdu
         </div>
 
         {/* Gallery Grid / Mobile Scroller */}
-        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-8 overflow-x-auto md:overflow-visible scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 h-auto md:h-[60vh] pb-8 md:pb-0 snap-x snap-mandatory">
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-8 overflow-x-auto md:overflow-visible scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 min-h-[50vh] md:h-[60vh] pb-8 md:pb-0 snap-x snap-mandatory">
           {products.map((product) => (
             <div
               key={product.id}

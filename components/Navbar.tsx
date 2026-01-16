@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, onNavigate, currentView, isLogoD
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 ${isMobileMenuOpen ? 'z-[180]' : 'z-[160]'} transition-all duration-700 backdrop-blur-md ${bgColor} ${textColor}`}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 md:py-8 flex items-center justify-between relative">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-4 md:py-8 flex items-center justify-between relative">
 
           {/* Left Links */}
           <div className="hidden md:flex space-x-8 z-20">

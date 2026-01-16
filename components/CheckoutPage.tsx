@@ -35,7 +35,7 @@ const CheckoutPage: React.FC<CheckoutProps> = ({ onNavigate }) => {
     };
 
     return (
-        <section className="min-h-screen bg-[#FBFBFB] pt-32 pb-24 px-6 md:px-12">
+        <section className="min-h-screen bg-[#FBFBFB] pt-32 pb-24 px-4 md:px-12">
             <div className="max-w-[1000px] mx-auto">
                 <header className="mb-20">
                     <h1 className="text-4xl md:text-6xl font-serif">Checkout</h1>

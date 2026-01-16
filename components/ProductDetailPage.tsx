@@ -141,7 +141,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase mb-4 md:mb-8 text-white/70"
+                            className="text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase mb-4 md:mb-8 text-white/70 px-4"
                         >
                             Masterpiece Collection
                         </motion.p>
@@ -149,7 +149,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-[14vw] md:text-[12vw] leading-[0.85] font-serif font-medium tracking-tighter text-white"
+                            className="text-[14vw] md:text-[12vw] leading-[0.85] font-serif font-medium tracking-tighter text-white px-2"
                         >
                             {product.title}
                         </motion.h1>
@@ -167,13 +167,13 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
 
                 {/* --- SECTION 2: THE STORY --- */}
                 <motion.section
-                    className="relative min-h-screen w-full flex items-center justify-center bg-[#fbfaf8] text-black rounded-t-[2rem] md:rounded-t-[3rem] overflow-hidden py-12 md:py-0"
+                    className="relative min-h-screen w-full flex items-center justify-center bg-[#fbfaf8] text-black rounded-t-[2rem] md:rounded-t-[3rem] overflow-hidden py-16 md:py-0"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={containerVariants}
                 >
-                    <div className="max-w-[1400px] w-full px-6 md:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
+                    <div className="max-w-[1400px] w-full px-5 md:px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
 
                         {/* Editorial Text - Animate from left */}
                         <motion.div
@@ -201,7 +201,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                         <div className="flex flex-col items-center md:items-stretch">
                             {/* Insert Square Image Here - Outside the white box */}
                             <motion.div variants={itemVariants} className="w-full flex justify-center mb-8 relative z-10">
-                                <img src={squareImage} alt="Detail" className="w-64 h-64 object-contain mix-blend-multiply filter drop-shadow-2xl" />
+                                <img src={squareImage} alt="Detail" className="w-[60%] md:w-full max-w-sm object-contain mix-blend-multiply filter drop-shadow-2xl" />
                             </motion.div>
 
                             {/* Commerce / Actions */}
@@ -313,7 +313,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                     viewport={{ once: true, amount: 0.1 }}
                     variants={containerVariants}
                 >
-                    <div className="flex-1 flex items-center justify-center py-32 px-6">
+                    <div className="flex-1 flex items-center justify-center py-16 md:py-32 px-5 md:px-12">
                         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
                             <motion.div variants={slideFromLeft}>
                                 <motion.h3
