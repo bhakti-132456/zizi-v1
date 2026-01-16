@@ -20,13 +20,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigateProduct }) => {
           <img
             src="/zizi-webp/dior-eloise-hero.webp"
             alt="Dior – Éloise"
-            className="w-full h-full object-cover object-center scale-105 animate-slow-zoom blur-[1px]"
+            className="w-full h-full object-cover object-bottom md:object-center scale-105 animate-slow-zoom blur-[1px]"
           />
         </picture>
 
-        {/* Cinematic Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
-        <div className="absolute inset-0 bg-black/10" />
+        {/* Cinematic Overlays - Lighter on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 md:from-black/40 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-black/5 md:bg-black/10" />
       </div>
 
       {/* Hero Content - Award Winning Placement */}
