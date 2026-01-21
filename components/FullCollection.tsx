@@ -118,9 +118,9 @@ const FullCollection: React.FC<FullCollectionProps> = ({ onNavigateProduct }) =>
         transition={{ duration: 1 }}
       >
         {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-white">
           <img
-            src="/images/collections/hero-bg.jpeg"
+            src="/images/collections/hero-bg.png"
             alt="Collection Hero"
             className="w-full h-full object-cover"
           />
