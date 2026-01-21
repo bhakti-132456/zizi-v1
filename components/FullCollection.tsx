@@ -120,16 +120,16 @@ const FullCollection: React.FC<FullCollectionProps> = ({ onNavigateProduct }) =>
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/collections/hero-bg.png"
+            src="/images/collections/hero-bg.jpeg"
             alt="Collection Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+
         </div>
 
         <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-6">
           <motion.h1
-            className="text-[8vw] md:text-[6vw] font-serif font-bold leading-none tracking-tight text-white drop-shadow-md"
+            className="text-[8vw] md:text-[6vw] font-serif font-bold leading-none tracking-tight text-black drop-shadow-md"
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}

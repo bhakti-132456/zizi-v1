@@ -9,6 +9,7 @@ export interface Product {
     description: string;
     summary: string;
     images: string[];
+    galleryImages: string[];
     specs: {
         material: string;
         finish: string;
@@ -46,6 +47,13 @@ export const products: Product[] = [
             '/zizi-webp/selected-dior-eloise.webp',
             '/zizi-webp/collector-dior-eloise.webp'
         ],
+        galleryImages: [
+            '/pdp-images/Dior Eloise/Dior Eloise 1.JPG',
+            '/pdp-images/Dior Eloise/Dior Eloise 2.JPG',
+            '/pdp-images/Dior Eloise/Dior Eloise 3.JPG',
+            '/pdp-images/Dior Eloise/Dior Eloise 4.JPG',
+            '/pdp-images/Dior Eloise/Dior Eloise 5.JPG'
+        ],
         specs: {
             material: 'Fine Porcelain, 18k Gold-Plated Alloy',
             finish: 'Hand-Applied Toile de Jouy',
@@ -79,6 +87,15 @@ export const products: Product[] = [
             '/zizi-webp/fendi.webp',
             '/zizi-webp/selected-fendi-vittoria.webp',
             '/zizi-webp/collector-fendi-vittoria.webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 1.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 2.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 3.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 4.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 5.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 6.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi Vittoria 7.JPG'
         ],
         specs: {
             material: 'High-Gloss Ceramic & Polished Brass Finish',
@@ -114,6 +131,14 @@ export const products: Product[] = [
             '/zizi-webp/selected-lv-aurele.webp',
             '/zizi-webp/collector-lv-aurele.webp'
         ],
+        galleryImages: [
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 1.JPG',
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 2.JPG',
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 3.JPG',
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 4.JPG',
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 5.JPG',
+            '/pdp-images/Gold LV Aurele/Gold LV Aurele 6.JPG'
+        ],
         specs: {
             material: 'Electroplated Art Resin Core',
             finish: 'High-Shine 24k Gold Effect / Etched Detailing',
@@ -145,6 +170,12 @@ export const products: Product[] = [
             '/zizi-webp/lv-benoit.webp',
             '/zizi-webp/lv-benoit-2.webp',
             '/zizi-webp/lv-benoit-2(1).webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 1.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 2.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 3.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 4.JPG'
         ],
         specs: {
             material: 'Heavyweight Resin Composite',
@@ -178,6 +209,14 @@ export const products: Product[] = [
             '/zizi-webp/hermes-henrietta(1).webp',
             '/zizi-webp/hermes-henrietta-2.webp'
         ],
+        galleryImages: [
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 1.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 2.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 3.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 4.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 5.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes Henrietta 6.JPG'
+        ],
         specs: {
             material: 'Glazed Ceramic & Gold Plate',
             finish: 'Signature Orange Glaze / Equine Decal',
@@ -209,6 +248,13 @@ export const products: Product[] = [
             '/zizi-webp/harrods-william.webp',
             '/zizi-webp/harrods-william-2.webp',
             '/zizi-webp/harrods-william-2(1).webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Harrods William/Harrods William 1.JPG',
+            '/pdp-images/Harrods William/Harrods William 2.JPG',
+            '/pdp-images/Harrods William/Harrods William 3.JPG',
+            '/pdp-images/Harrods William/Harrods William 4.JPG',
+            '/pdp-images/Harrods William/Harrods William 5.JPG'
         ],
         specs: {
             material: 'Ceramic & Metal Alloy',
@@ -243,6 +289,12 @@ export const products: Product[] = [
             '/zizi-webp/fm-reginald-2.webp',
             '/zizi-webp/fm-reginald-2(1).webp',
             '/zizi-webp/fm-reginald-2(2).webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Fortnum Reginald/Fortnum Reginald 1.JPG',
+            '/pdp-images/Fortnum Reginald/Fortnum Reginald 2.JPG',
+            '/pdp-images/Fortnum Reginald/Fortnum Reginald 3.JPG',
+            '/pdp-images/Fortnum Reginald/Fortnum Reginald 4.JPG'
         ],
         specs: {
             material: 'Fine Porcelain & Gold Plate',
