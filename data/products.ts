@@ -9,6 +9,7 @@ export interface Product {
     description: string;
     summary: string;
     images: string[];
+    galleryImages: string[];
     specs: {
         material: string;
         finish: string;
@@ -21,6 +22,7 @@ export interface Product {
         title: string;
         description: string;
     };
+    imagePosition?: string;
 }
 
 export const products: Product[] = [
@@ -45,6 +47,12 @@ export const products: Product[] = [
             '/zizi-webp/dior-eloise2.webp',
             '/zizi-webp/selected-dior-eloise.webp',
             '/zizi-webp/collector-dior-eloise.webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Dior Eloise/Dior - Eloise 1.JPG',
+            '/pdp-images/Dior Eloise/Dior - Eloise 2.JPG',
+            '/pdp-images/Dior Eloise/Dior - Eloise 3 1.JPG',
+            '/pdp-images/Dior Eloise/Dior - Eloise 4.JPG'
         ],
         specs: {
             material: 'Fine Porcelain, 18k Gold-Plated Alloy',
@@ -74,11 +82,17 @@ export const products: Product[] = [
       <p>The ceramic shell is kiln-fired to achieve a glass-like hardness, providing a perfect canvas for the intricate decal work. The metallic elements are polished to a mirror shine, reflecting the environment and grounding the piece with a sense of substantial luxury.</p>
     `,
         images: [
-            '/zizi-webp/fendi-vittoria.webp',
+            '/fendi-vittoria.jpeg',
             '/zizi-webp/fendi-vittoria(1).webp',
             '/zizi-webp/fendi.webp',
             '/zizi-webp/selected-fendi-vittoria.webp',
             '/zizi-webp/collector-fendi-vittoria.webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Fendi Vittoria/Fendi - Vittoria 1.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi - Vittoria 2.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi - Vittoria 3.JPG',
+            '/pdp-images/Fendi Vittoria/Fendi - Vittoria 4.JPG'
         ],
         specs: {
             material: 'High-Gloss Ceramic & Polished Brass Finish',
@@ -90,7 +104,8 @@ export const products: Product[] = [
         seo: {
             title: 'Fendi Vittoria Turtle Sculpture | Luxury Green Monogram Art | ZIZI',
             description: 'Discover Vittoria by ZIZI. A luxury turtle sculpture featuring a verdant green geometric monogram. Modern Italian-inspired decor for the collector.'
-        }
+        },
+        imagePosition: '20% center'
     },
     {
         id: 3,
@@ -113,6 +128,12 @@ export const products: Product[] = [
             '/zizi-webp/lv-aurele-2.webp',
             '/zizi-webp/selected-lv-aurele.webp',
             '/zizi-webp/collector-lv-aurele.webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Gold LV Aurele/GLV - Aurele 1.JPG',
+            '/pdp-images/Gold LV Aurele/GLV - Aurele 2.JPG',
+            '/pdp-images/Gold LV Aurele/GLV - Aurele 3.JPG',
+            '/pdp-images/Gold LV Aurele/GLV - Aurele 4.JPG'
         ],
         specs: {
             material: 'Electroplated Art Resin Core',
@@ -146,6 +167,12 @@ export const products: Product[] = [
             '/zizi-webp/lv-benoit-2.webp',
             '/zizi-webp/lv-benoit-2(1).webp'
         ],
+        galleryImages: [
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 1.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 2.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 3.JPG',
+            '/pdp-images/Rose gold LV Banoit/Rose gold LV Banoit 4.JPG'
+        ],
         specs: {
             material: 'Heavyweight Resin Composite',
             finish: 'Statuary Bronze Plating / Deep Engraving',
@@ -178,6 +205,12 @@ export const products: Product[] = [
             '/zizi-webp/hermes-henrietta(1).webp',
             '/zizi-webp/hermes-henrietta-2.webp'
         ],
+        galleryImages: [
+            '/pdp-images/Hermes Henrietta/Hermes - Henreitta 1.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes - Henreitta 2.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes - Henreitta 3.JPG',
+            '/pdp-images/Hermes Henrietta/Hermes - Henreitta 4.JPG'
+        ],
         specs: {
             material: 'Glazed Ceramic & Gold Plate',
             finish: 'Signature Orange Glaze / Equine Decal',
@@ -209,6 +242,12 @@ export const products: Product[] = [
             '/zizi-webp/harrods-william.webp',
             '/zizi-webp/harrods-william-2.webp',
             '/zizi-webp/harrods-william-2(1).webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Harrods William/Harrods - William 1.JPG',
+            '/pdp-images/Harrods William/Harrods - William 2.JPG',
+            '/pdp-images/Harrods William/Harrods - William 3.JPG',
+            '/pdp-images/Harrods William/Harrods - William 4.JPG'
         ],
         specs: {
             material: 'Ceramic & Metal Alloy',
@@ -243,6 +282,12 @@ export const products: Product[] = [
             '/zizi-webp/fm-reginald-2.webp',
             '/zizi-webp/fm-reginald-2(1).webp',
             '/zizi-webp/fm-reginald-2(2).webp'
+        ],
+        galleryImages: [
+            '/pdp-images/Fortnum Reginald/FM - Reginald 1.JPG',
+            '/pdp-images/Fortnum Reginald/FM - Reginald 2.JPG',
+            '/pdp-images/Fortnum Reginald/FM - Reginald 3.JPG',
+            '/pdp-images/Fortnum Reginald/FM - Reginald 4.JPG'
         ],
         specs: {
             material: 'Fine Porcelain & Gold Plate',

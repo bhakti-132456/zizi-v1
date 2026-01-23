@@ -35,9 +35,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme, onNavigate, currentView, isLogoD
 
   const handleUserClick = () => {
     if (isAuthenticated) {
-      if (confirm('Sign out?')) {
-        logout();
-      }
+      window.history.pushState({}, '', '/account');
+      onNavigate('account' as any);
     } else {
       setIsAuthModalOpen(true);
     }

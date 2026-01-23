@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
         {/* Social Icons */}
         <div className="flex space-x-12">
-          <a href="#" className="text-white/50 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+          <a href="https://www.instagram.com/zizi__designs/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
             <Instagram size={24} strokeWidth={1} />
           </a>
           <a href="#" className="text-white/50 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">

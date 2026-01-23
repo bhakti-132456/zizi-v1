@@ -1,10 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import FeaturedCollection from './components/FeaturedCollection';
 import AboutSection from './components/AboutSection';
-import Testimonials from './components/Testimonials';
-import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import InstagramArchive from './components/InstagramArchive';
 import { getProductBySlug } from './data/products';
@@ -21,6 +18,9 @@ const ProductDetailPage = lazy(() => import('./components/ProductDetailPage'));
 const CartPage = lazy(() => import('./components/CartPage'));
 const ThankYouPage = lazy(() => import('./components/ThankYouPage'));
 const CheckoutPage = lazy(() => import('./components/CheckoutPage'));
+const AccountPage = lazy(() => import('./components/AccountPage'));
+const AccountOrdersPage = lazy(() => import('./components/AccountOrdersPage'));
+const AccountDetailsPage = lazy(() => import('./components/AccountDetailsPage'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -33,7 +33,7 @@ const PageLoader = () => (
 );
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'collection' | 'about' | 'product' | 'cart' | 'thank-you' | 'checkout'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'collection' | 'about' | 'product' | 'cart' | 'thank-you' | 'checkout' | 'account' | 'account-orders' | 'account-details'>('home');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentProductSlug, setCurrentProductSlug] = useState<string | null>(null);
@@ -76,6 +76,9 @@ export default function App() {
       if (path === '/cart') { setCurrentView('cart'); return; }
       if (path === '/checkout') { setCurrentView('checkout'); return; }
       if (path === '/checkout/thank-you') { setCurrentView('thank-you'); return; }
+      if (path === '/account/orders') { setCurrentView('account-orders'); return; }
+      if (path === '/account/details') { setCurrentView('account-details'); return; }
+      if (path === '/account') { setCurrentView('account'); return; }
       if (path === '/') setCurrentView('home');
     };
     handleLocationChange();
@@ -85,7 +88,7 @@ export default function App() {
 
   // Section and Theme Detection
   useEffect(() => {
-    if (['collection', 'about', 'product', 'cart', 'thank-you', 'checkout'].includes(currentView)) {
+    if (['collection', 'about', 'product', 'cart', 'thank-you', 'checkout', 'account', 'account-orders', 'account-details'].includes(currentView)) {
       setTheme('light');
       return;
     }
@@ -112,7 +115,7 @@ export default function App() {
     return () => observer.disconnect();
   }, [currentView]);
 
-  const navigateTo = (view: 'home' | 'collection' | 'about' | 'cart' | 'checkout' | 'thank-you') => {
+  const navigateTo = (view: 'home' | 'collection' | 'about' | 'cart' | 'checkout' | 'thank-you' | 'account' | 'account-orders' | 'account-details') => {
     window.history.pushState({}, '', view === 'home' ? '/' : `/${view}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentView(view);
@@ -193,17 +196,8 @@ export default function App() {
                   </div>
                 </CardScrollSection>
 
-                {/* Featured Collection - Cards animate from left */}
-                <CardScrollSection index={1} className="min-h-screen md:min-h-[100dvh] bg-white">
-                  <ParallaxReveal direction="left" offset={80}>
-                    <div className="min-h-screen md:h-[100dvh] w-full overflow-hidden" data-section-name="Featured" data-theme="light">
-                      <FeaturedCollection onNavigateProduct={navigateToProduct} />
-                    </div>
-                  </ParallaxReveal>
-                </CardScrollSection>
-
                 {/* About Section - Content animates from right */}
-                <CardScrollSection index={2} className="bg-[#f4f4f4]">
+                <CardScrollSection index={1} className="bg-[#f4f4f4]">
                   <ParallaxReveal direction="right" offset={80}>
                     <div className="w-full overflow-hidden" data-section-name="Our Philosophy" data-theme="light">
                       <AboutSection />
@@ -211,17 +205,8 @@ export default function App() {
                   </ParallaxReveal>
                 </CardScrollSection>
 
-                {/* Testimonials - Animate from left */}
-                <CardScrollSection index={3} className="bg-[#fbfaf8]">
-                  <ParallaxReveal direction="left" offset={60}>
-                    <div className="w-full overflow-hidden" data-section-name="Voices" data-theme="light">
-                      <Testimonials />
-                    </div>
-                  </ParallaxReveal>
-                </CardScrollSection>
-
                 {/* Instagram Archive - Animate from right */}
-                <CardScrollSection index={4} className="bg-[#f4f4f4]">
+                <CardScrollSection index={2} className="bg-[#f4f4f4]">
                   <ParallaxReveal direction="right" offset={60}>
                     <div className="w-full overflow-hidden" data-section-name="Archive" data-theme="light">
                       <InstagramArchive />
@@ -229,17 +214,8 @@ export default function App() {
                   </ParallaxReveal>
                 </CardScrollSection>
 
-                {/* Newsletter - Animate from left */}
-                <CardScrollSection index={5} className="bg-black">
-                  <ParallaxReveal direction="left" offset={60}>
-                    <div className="w-full overflow-hidden" data-section-name="Join Us" data-theme="dark">
-                      <Newsletter />
-                    </div>
-                  </ParallaxReveal>
-                </CardScrollSection>
-
                 {/* Footer - Animate up */}
-                <CardScrollSection index={6} className="bg-[#050505]">
+                <CardScrollSection index={3} className="bg-[#050505]">
                   <ParallaxReveal direction="up" offset={40}>
                     <div className="w-full overflow-hidden py-16 md:py-24" data-section-name="Connect" data-theme="dark">
                       <Footer />
@@ -257,6 +233,12 @@ export default function App() {
                   <Suspense fallback={<PageLoader />}><ThankYouPage onNavigate={navigateTo} /></Suspense>
                 ) : currentView === 'checkout' ? (
                   <Suspense fallback={<PageLoader />}><CheckoutPage onNavigate={navigateTo} /></Suspense>
+                ) : currentView === 'account' ? (
+                  <Suspense fallback={<PageLoader />}><AccountPage onNavigate={navigateTo} /></Suspense>
+                ) : currentView === 'account-orders' ? (
+                  <Suspense fallback={<PageLoader />}><AccountOrdersPage onNavigate={navigateTo} /></Suspense>
+                ) : currentView === 'account-details' ? (
+                  <Suspense fallback={<PageLoader />}><AccountDetailsPage onNavigate={navigateTo} /></Suspense>
                 ) : currentView === 'product' && currentProduct ? (
                   <Suspense fallback={<PageLoader />}>
                     <ProductDetailPage

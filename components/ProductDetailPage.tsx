@@ -70,20 +70,11 @@ const squareImageMap: Record<string, string> = {
     '7': '/zizi-square/reginald.png',
 };
 
-const pdpGalleryMap: Record<string, string[]> = {
-    '1': ['/pdp-images/dior-eloise.jpg', '/pdp-images/dior-eloise-2.jpg'],
-    '2': ['/pdp-images/fendi-vittoria.jpg', '/pdp-images/fendi.jpg'],
-    '3': ['/pdp-images/lv-aurele.jpg', '/pdp-images/lv-aurele-2.jpg'],
-    '4': ['/pdp-images/lv-benoit.jpg', '/pdp-images/lv-benoit-2.jpg'],
-    '5': ['/pdp-images/hermes-henrietta.jpg', '/pdp-images/hermes-henrietta-2.jpg'],
-    '6': ['/pdp-images/harrods-william.jpg', '/pdp-images/harrods-william-2.jpg'],
-    '7': ['/pdp-images/fm-reginald.jpg', '/pdp-images/fm-reginald-2.jpg'],
-};
+
 
 const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, onNavigate }) => {
     const { addItem } = useCart();
     const squareImage = squareImageMap[product.id.toString()] || product.images[0];
-    const galleryImages = pdpGalleryMap[product.id.toString()] || [];
 
     const handleAddToCart = () => {
         const priceNumber = parseInt(product.price.replace(/[^0-9]/g, ''), 10);
@@ -129,6 +120,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                         src={product.images[0]}
                         alt={product.title}
                         className="absolute inset-0 w-full h-full object-cover opacity-80"
+                        style={{ objectPosition: product.imagePosition || 'center' }}
                         loading="eager"
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
@@ -165,144 +157,86 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, onBack, 
                     </motion.div>
                 </motion.section>
 
-                {/* --- SECTION 2: THE STORY --- */}
+                {/* --- SECTION 2: THE GALLERY (Replaces Story) --- */}
                 <motion.section
-                    className="relative min-h-screen w-full flex items-center justify-center bg-[#fbfaf8] text-black rounded-t-[2rem] md:rounded-t-[3rem] overflow-hidden py-16 md:py-0"
+                    className="relative w-full bg-[#f4f4f4] text-black py-12 md:py-24 px-4 md:px-12"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     variants={containerVariants}
                 >
-                    <div className="max-w-[1400px] w-full px-5 md:px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
-
-                        {/* Editorial Text - Animate from left */}
-                        <motion.div
-                            className="flex flex-col justify-center"
-                            variants={slideFromLeft}
-                        >
-                            <motion.h2
-                                className="text-5xl md:text-8xl font-serif mb-8 md:mb-12 leading-[0.9] mt-8 md:mt-0"
-                                variants={itemVariants}
-                            >
-                                The Story
-                            </motion.h2>
-                            <motion.div
-                                className="w-16 md:w-24 h-[1px] bg-black mb-8 md:mb-12"
-                                variants={itemVariants}
-                            />
-                            <motion.div
-                                className="prose prose-lg md:prose-xl prose-p:font-serif prose-p:text-gray-600 prose-p:leading-relaxed"
-                                dangerouslySetInnerHTML={{ __html: product.description }}
-                                variants={itemVariants}
-                            />
-                        </motion.div>
-
-                        {/* Right Column: Image + specialized Commerce Box */}
-                        <div className="flex flex-col items-center md:items-stretch">
-                            {/* Insert Square Image Here - Outside the white box */}
-                            <motion.div variants={itemVariants} className="w-full flex justify-center mb-8 relative z-10">
-                                <img src={squareImage} alt="Detail" className="w-[60%] md:w-full max-w-sm object-contain mix-blend-multiply filter drop-shadow-2xl" />
-                            </motion.div>
-
-                            {/* Commerce / Actions */}
-                            <motion.div
-                                className="flex flex-col gap-6 md:gap-8 bg-white p-6 md:p-12 shadow-xl rounded-sm mb-12 md:mb-0 relative z-0"
-                                variants={slideFromRight}
-                            >
-
+                    <div className="max-w-[1600px] mx-auto">
+                        <div className="columns-1 md:columns-2 gap-8 space-y-8">
+                            {product.galleryImages.map((src, index) => (
                                 <motion.div
-                                    className="flex justify-between items-baseline border-b border-black/10 pb-6 md:pb-8"
+                                    key={index}
+                                    className="relative overflow-hidden break-inside-avoid"
                                     variants={itemVariants}
                                 >
-                                    <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-gray-400">Acquisition</span>
-                                    <span className="text-3xl md:text-4xl font-serif">{product.price}</span>
+                                    <img
+                                        src={src}
+                                        alt={`${product.title} detailed view ${index + 1}`}
+                                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                                        loading="lazy"
+                                    />
                                 </motion.div>
-
-                                <motion.div
-                                    className="flex flex-col md:flex-row gap-4"
-                                    variants={itemVariants}
-                                >
-                                    <motion.button
-                                        onClick={handleAddToCart}
-                                        className="flex-1 bg-black text-white py-5 md:py-6 text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-colors w-full"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.99 }}
-                                    >
-                                        Add to Collection
-                                    </motion.button>
-                                    <motion.button
-                                        className="flex-1 border border-black py-5 md:py-6 text-xs font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-colors w-full"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.99 }}
-                                    >
-                                        Inquire
-                                    </motion.button>
-                                </motion.div>
-                                <motion.p
-                                    className="text-[10px] text-gray-400 text-center uppercase tracking-widest mt-2 md:mt-4"
-                                    variants={itemVariants}
-                                >
-                                    Worldwide Shipping • Authenticity Certified
-                                </motion.p>
-                            </motion.div>
+                            ))}
                         </div>
                     </div>
                 </motion.section>
 
-                {/* --- SECTION 3: THE GALLERY --- */}
+                {/* --- SECTION 3: ACQUISITION --- */}
                 <motion.section
-                    className="relative min-h-screen w-full bg-[#111] text-white flex items-center justify-center overflow-hidden"
+                    className="relative w-full bg-white text-black py-16 md:py-32 flex justify-center border-t border-b border-black/5"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true }}
                     variants={containerVariants}
                 >
                     <motion.div
-                        className="absolute top-12 left-0 w-full text-center z-10"
-                        variants={itemVariants}
+                        className="max-w-2xl w-full mx-4 flex flex-col gap-6 md:gap-8 bg-white p-6 md:p-12 shadow-2xl shadow-black/5 border border-black/5"
+                        variants={slideFromRight}
                     >
-                        <span className="text-xs font-bold tracking-[0.3em] uppercase opacity-50">Visual Study</span>
-                    </motion.div>
+                        <div className="text-center mb-4">
+                            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-black/40 block mb-2">{product.category}</span>
+                            <h2 className="text-3xl md:text-5xl font-serif">{product.title}</h2>
+                        </div>
 
-                    <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 min-h-screen">
-                        {galleryImages[0] && (
-                            <motion.div
-                                className="relative h-[50vh] md:h-full border-r border-white/10 group overflow-hidden"
-                                variants={slideFromLeft}
+                        <motion.div
+                            className="flex justify-between items-baseline border-b border-black/10 pb-6 md:pb-8"
+                            variants={itemVariants}
+                        >
+                            <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-gray-400">Acquisition</span>
+                            <span className="text-3xl md:text-4xl font-serif">{product.price}</span>
+                        </motion.div>
+
+                        <motion.div
+                            className="flex flex-col md:flex-row gap-4"
+                            variants={itemVariants}
+                        >
+                            <motion.button
+                                onClick={handleAddToCart}
+                                className="flex-1 bg-black text-white py-5 md:py-6 text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-900 transition-colors w-full shadow-lg"
+                                whileHover={{ scale: 1.01 }}
+                                whileTap={{ scale: 0.99 }}
                             >
-                                <motion.img
-                                    src={galleryImages[0]}
-                                    alt="Detail 1"
-                                    className="w-full h-full object-cover transition-all duration-[1.5s]"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.6 }}
-                                />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
-                            </motion.div>
-                        )}
-                        {galleryImages[1] ? (
-                            <motion.div
-                                className="relative h-[50vh] md:h-full group overflow-hidden"
-                                variants={slideFromRight}
+                                Add to Collection
+                            </motion.button>
+                            <motion.button
+                                className="flex-1 border border-black py-5 md:py-6 text-xs font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-colors w-full"
+                                whileHover={{ scale: 1.01 }}
+                                whileTap={{ scale: 0.99 }}
                             >
-                                <motion.img
-                                    src={galleryImages[1]}
-                                    alt="Detail 2"
-                                    className="w-full h-full object-cover transition-all duration-[1.5s]"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.6 }}
-                                />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
-                            </motion.div>
-                        ) : (
-                            <motion.div
-                                className="flex items-center justify-center h-[50vh] md:h-full bg-[#151515]"
-                                variants={slideFromRight}
-                            >
-                                <span className="font-serif italic text-white/30">Detail View Coming Soon</span>
-                            </motion.div>
-                        )}
-                    </div>
+                                Inquire
+                            </motion.button>
+                        </motion.div>
+                        <motion.p
+                            className="text-[10px] text-gray-400 text-center uppercase tracking-widest mt-2 md:mt-4"
+                            variants={itemVariants}
+                        >
+                            Worldwide Shipping • Authenticity Certified
+                        </motion.p>
+                    </motion.div>
                 </motion.section>
 
                 {/* --- SECTION 4: THE DETAILS & FOOTER --- */}

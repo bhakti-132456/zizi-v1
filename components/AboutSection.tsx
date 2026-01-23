@@ -15,9 +15,7 @@ const AboutSection: React.FC = () => {
               alt="Our Philosophy"
               className="w-full h-full object-cover saturate-[0.85] hover:saturate-100 transition-all duration-700 ease-in-out"
             />
-            <div className="absolute top-6 right-6 md:bottom-6 md:right-auto md:left-6 bg-white/90 backdrop-blur px-6 py-2 z-10">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase">The Atelier</span>
-            </div>
+
           </div>
 
           {/* Text Side */}
