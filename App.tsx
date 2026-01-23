@@ -9,7 +9,6 @@ import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
 import SmoothScroll from './components/SmoothScroll';
 import ParallaxReveal from './components/ParallaxReveal';
-import CardScrollSection from './components/CardScrollSection';
 
 // Lazy-loaded heavy components for code splitting
 const FullCollection = lazy(() => import('./components/FullCollection'));
@@ -190,38 +189,32 @@ export default function App() {
             {currentView === 'home' ? (
               <main className="relative">
                 {/* Hero Section - Full viewport with parallax background */}
-                <CardScrollSection index={0} className="min-h-[100dvh]">
-                  <div className="h-[100dvh] w-full overflow-hidden" data-section-name="The Beginning" data-theme="dark">
-                    <Hero onNavigateProduct={navigateToProduct} />
-                  </div>
-                </CardScrollSection>
+                <div className="relative w-full h-[100dvh] overflow-hidden" data-section-name="The Beginning" data-theme="dark">
+                  <Hero onNavigateProduct={navigateToProduct} />
+                </div>
 
                 {/* About Section - Content animates from right */}
-                <CardScrollSection index={1} className="bg-[#f4f4f4]">
-                  <ParallaxReveal direction="right" offset={80}>
-                    <div className="w-full overflow-hidden" data-section-name="Our Philosophy" data-theme="light">
-                      <AboutSection />
-                    </div>
+                <div className="relative w-full bg-[#f4f4f4] overflow-hidden" data-section-name="Our Philosophy" data-theme="light">
+                  <ParallaxReveal direction="up" offset={40}>
+                    <AboutSection />
                   </ParallaxReveal>
-                </CardScrollSection>
+                </div>
 
                 {/* Instagram Archive - Animate from right */}
-                <CardScrollSection index={2} className="bg-[#f4f4f4]">
-                  <ParallaxReveal direction="right" offset={60}>
-                    <div className="w-full overflow-hidden" data-section-name="Archive" data-theme="light">
-                      <InstagramArchive />
-                    </div>
+                <div className="relative w-full bg-[#f4f4f4] overflow-hidden" data-section-name="Archive" data-theme="light">
+                  <ParallaxReveal direction="up" offset={40}>
+                    <InstagramArchive />
                   </ParallaxReveal>
-                </CardScrollSection>
+                </div>
 
                 {/* Footer - Animate up */}
-                <CardScrollSection index={3} className="bg-[#050505]">
-                  <ParallaxReveal direction="up" offset={40}>
-                    <div className="w-full overflow-hidden py-16 md:py-24" data-section-name="Connect" data-theme="dark">
+                <div className="relative w-full bg-[#050505] overflow-hidden" data-section-name="Connect" data-theme="dark">
+                  <ParallaxReveal direction="up" offset={20}>
+                    <div className="py-16 md:py-24">
                       <Footer />
                     </div>
                   </ParallaxReveal>
-                </CardScrollSection>
+                </div>
               </main>
             ) : (
               <div className="pt-20">
